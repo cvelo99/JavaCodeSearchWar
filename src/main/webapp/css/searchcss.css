@@ -1,0 +1,122 @@
+@CHARSET "UTF-8";
+
+
+body {
+	font-family: Arial;
+	font-size: 9pt;
+	margin: 5px 0 0 5px;
+}
+
+.searchLeftPanel {
+	margin-right: 10px;
+}
+
+a.home {
+	color:black;
+	text-decoration: underline;
+}
+
+a.fileLink {
+	text-decoration: none;
+	color:black;
+}
+
+a.home:HOVER {
+	text-decoration: none;
+}
+
+a.homeb {
+	color:blue;
+	text-decoration: underline;
+}
+
+a.homeb:HOVER {
+	text-decoration: none;
+}
+
+.page {
+	max-width: 1200px;
+	width: 100%;
+}
+
+.nav {
+	float:left;
+	width: 145px; /* same as results margin minus 40 */
+	border: solid thin gray;
+	padding: 10px;
+	border-radius: 3px;
+	margin-right: 20px;
+}
+
+.results {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.counter {
+	clear: both;
+	float: right;
+}
+
+.count {
+	color: red;
+}
+
+.searchLine {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.query {
+	float: left;
+	max-width:1200px;
+	min-width:1000px;
+	width: 1000px;
+}
+
+.searchrow {
+	cursor: pointer;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.silver {
+	color: #C0C0C0;
+}
+
+
+.pt10 {
+	padding-top:10px;
+}
+
+pre.prettyprint {
+	border-radius: 3px;
+}
+
+.no_format {
+	font-size: 8pt;
+	padding-bottom: 10px;
+}
+
+.path_line {
+	margin: 5px 0px
+}
+
+.typ {
+	cursor: pointer;
+}
+
+.displayNav {
+	cursor: pointer;
+}

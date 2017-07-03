@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+       http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	   http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- where to scan for annotations -->
+	<context:component-scan base-package="cc" />
+	<mvc:annotation-driven />
+	
+	<!--
+		This is a work around for what I believe to be a bug. Without this line, when starting via tomcat, this appears:
+		Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'javax.validation.Validator' available: expected single matching bean but found 2: org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean#0,org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean#1
+		Which seems related to this:
+		https://github.com/spring-projects/spring-boot/issues/1539
+	 -->
+	<bean primary="true" name="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"></bean>
+
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsps/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+</beans>
